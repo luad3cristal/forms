@@ -1,0 +1,72 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ded7fe;
+}
+
+main {
+  max-width: 720px;
+  height: 100vh;
+  margin: 0 auto;
+
+  padding: 40px 60px;
+
+  background-color: #fff;
+}
+
+#personal-data {
+  width: 100%;
+  margin: 0 auto;
+  border-bottom: 1px solid #0000004f;
+}
+
+#personal-data h3 {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+#personal-data div {
+  margin-bottom: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#personal-data div label span {
+  color: red;
+}
+
+#personal-data div input {
+  width: 100%;
+  padding: 5px 10px;
+}
+
+/* #personal-data div input:focus {
+  border: 10px solid red;
+} */
+
+/* fieldset {
+  padding: 15px 20px 30px;
+
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+
+fieldset legend {
+  margin-left: 10px;
+}
+
+fieldset div {
+  display: flex;
+  flex-direction: column;
+}
+
+fieldset div input {
+  width: 70%;
+} */
