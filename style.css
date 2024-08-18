@@ -13,7 +13,7 @@ main {
   height: 100%;
   margin: 0 auto;
 
-  padding: 40px 60px;
+  padding: 40px 60px 20px;
 
   background-color: #fff;
 }
@@ -24,20 +24,23 @@ div label span {
 }
 
 #personal-data,
-#history {
+#history,
+#research {
   width: 100%;
-  margin: 0 auto 30px;
+  margin: 0 auto 20px;
   border-bottom: 1px solid #0000004f;
 }
 
 #personal-data h3,
-#history h3 {
+#history h3,
+#research h3 {
   text-align: left;
   margin-bottom: 20px;
 }
 
 #personal-data div,
-#history div {
+#history div,
+#research div {
   margin-bottom: 20px;
 
   display: flex;
@@ -54,7 +57,8 @@ div label span {
   border: 10px solid red;
 } */
 
-#history div select {
+#history div select,
+#research div select {
   width: 100%;
   padding: 5px 10px;
 }
@@ -66,4 +70,28 @@ div label span {
 
 #history .texto {
   display: none;
+}
+
+#research div {
+  gap: 8px;
+}
+
+#research div label {
+  font-size: 16px;
+}
+
+#botao {
+  display: flex;
+  justify-content: center;
+}
+
+#botao button {
+  font-size: 14px;
+  color: white;
+
+  background-color: #7a5cfa;
+
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
 }
