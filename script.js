@@ -1,3 +1,5 @@
+// comentário teste
+
 // Objeto com todas as informações que serão pegas
 const informacao = {
   nome: "",
