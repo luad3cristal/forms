@@ -110,3 +110,9 @@ div label span {
     max-width: 500px;
   }
 }
+
+@media screen and (max-width: 337px) {
+  main {
+    padding: 40px 40px 20px;
+  }
+}
