@@ -10,7 +10,7 @@ body {
 
 main {
   max-width: 720px;
-  height: 100vh;
+  height: 100%;
   margin: 0 auto;
 
   padding: 40px 60px;
@@ -18,27 +18,31 @@ main {
   background-color: #fff;
 }
 
-#personal-data {
+/* mostra as perguntas obrigatórias */
+div label span {
+  color: red;
+}
+
+#personal-data,
+#history {
   width: 100%;
-  margin: 0 auto;
+  margin: 0 auto 30px;
   border-bottom: 1px solid #0000004f;
 }
 
-#personal-data h3 {
+#personal-data h3,
+#history h3 {
   text-align: left;
   margin-bottom: 20px;
 }
 
-#personal-data div {
+#personal-data div,
+#history div {
   margin-bottom: 20px;
 
   display: flex;
   flex-direction: column;
   gap: 5px;
-}
-
-#personal-data div label span {
-  color: red;
 }
 
 #personal-data div input {
@@ -50,23 +54,16 @@ main {
   border: 10px solid red;
 } */
 
-/* fieldset {
-  padding: 15px 20px 30px;
-
-  display: flex;
-  gap: 20px;
-  flex-direction: column;
+#history div select {
+  width: 100%;
+  padding: 5px 10px;
 }
 
-fieldset legend {
-  margin-left: 10px;
+#history div textarea {
+  height: 60px;
+  padding: 5px 10px;
 }
 
-fieldset div {
-  display: flex;
-  flex-direction: column;
+#history .texto {
+  display: none;
 }
-
-fieldset div input {
-  width: 70%;
-} */

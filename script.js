@@ -1,4 +1,25 @@
-// comentário teste
+const select = document.getElementById("experiencia-pessoal");
+const select2 = document.getElementById("experiencia-familiar");
+
+select.addEventListener("input", () => {
+  let valor = select.options[select.selectedIndex].text;
+
+  if (valor == "Sim") {
+    document.getElementById("opcional").style.display = "flex";
+  } else {
+    document.getElementById("opcional").style.display = "none";
+  }
+});
+
+select2.addEventListener("click", () => {
+  let valor = select2.options[select2.selectedIndex].text;
+
+  if (valor == "Sim") {
+    document.getElementById("opcional2").style.display = "flex";
+  } else {
+    document.getElementById("opcional2").style.display = "none";
+  }
+});
 
 // Objeto com todas as informações que serão pegas
 const informacao = {
@@ -25,10 +46,9 @@ fetch("https://api.ipify.org?format=json")
     informacao.ip = "00.00.00.00";
   });
 
-// Função que irá ser ativada para pegar os dados dos inputs e subsituir 
+// Função que irá ser ativada para pegar os dados dos inputs e subsituir
 // No objeto e então levantar para o banco de dados.
 const postarDados = () => {
-
   // Pega o modelo de celular caso esteja usando um
   navigator.userAgentData.getHighEntropyValues(["model"]).then((values) => {
     if (values.mobile) {
@@ -39,7 +59,7 @@ const postarDados = () => {
   });
 
   //
-  // Nesse meio terá a lógica de pegar os dados dos inputs 
+  // Nesse meio terá a lógica de pegar os dados dos inputs
   //
 
   // Lógica para preparar os dados que serão enviados e para onde serão enviados
@@ -47,7 +67,7 @@ const postarDados = () => {
   const request = new Request("http://localhost:3333/users", {
     method: "POST",
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
     },
     body: JSON.stringify({
       nome: informacao.nome,
@@ -60,8 +80,8 @@ const postarDados = () => {
       conheceQueAconteceu: informacao.conheceQueAconteceu,
       meioMaisComum: informacao.meioMaisComum,
       tipoMaisComum: informacao.tipoMaisComum,
-      modeloCelular: informacao.modeloCelular
-    })
+      modeloCelular: informacao.modeloCelular,
+    }),
   });
 
   // Função para mandar os dados
@@ -75,7 +95,7 @@ const postarDados = () => {
     } catch (error) {
       console.error("Erro ao fazer a requisição:", error);
     }
-  }
+  };
 
   enviar();
 };

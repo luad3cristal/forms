@@ -50,7 +50,45 @@
             />
           </div>
         </section>
+
+        <section id="history">
+          <h3>Vivências Relacionadas a Fraudes</h3>
+
+          <div>
+            <label for="experiencia-pessoal"
+              >Você já sofreu algum golpe antes? <span>*</span>
+            </label>
+            <select id="experiencia-pessoal" required>
+              <option value=""></option>
+              <option value="Sim">Sim</option>
+              <option value="Não">Não</option>
+            </select>
+          </div>
+
+          <div id="opcional" class="texto">
+            <label for="descricao"> O que aconteceu? <span>*</span> </label>
+            <textarea name="descricao" id="descricao"></textarea>
+          </div>
+
+          <div>
+            <label for="experiencia-familiar"
+              >Você conhece alguém que já sofreu algum golpe? <span>*</span>
+            </label>
+            <select id="experiencia-familiar" required>
+              <option value=""></option>
+              <option value="Sim">Sim</option>
+              <option value="Não">Não</option>
+            </select>
+          </div>
+
+          <div id="opcional2" class="texto">
+            <label for="descricao2"> O que aconteceu? <span>*</span> </label>
+            <textarea name="descricao" id="descricao2"></textarea>
+          </div>
+        </section>
       </form>
     </main>
+
+    <script src="script.js"></script>
   </body>
 </html>
