@@ -6,6 +6,7 @@
 
 body {
   background-color: #ded7fe;
+  font-family: "Noto Sans";
 }
 
 main {
@@ -51,6 +52,7 @@ div label span {
 #personal-data div input {
   width: 100%;
   padding: 5px 10px;
+  font-family: "Noto Sans";
 }
 
 /* #personal-data div input:focus {
@@ -61,6 +63,12 @@ div label span {
 #research div select {
   width: 100%;
   padding: 5px 10px;
+  font-family: "Noto Sans";
+}
+
+#history div option,
+#research div option {
+  font-family: "Noto Sans";
 }
 
 #history div textarea {
