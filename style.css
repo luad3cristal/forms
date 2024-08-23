@@ -60,10 +60,6 @@ div label span {
   font-family: "Noto Sans";
 }
 
-/* #personal-data div input:focus {
-  border: 10px solid red;
-} */
-
 #history div select,
 #research div select {
   width: 100%;
