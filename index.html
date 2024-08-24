@@ -22,7 +22,7 @@
   <body>
     <main>
       <form>
-        <section id="personal-data">
+        <section class="form-section section-pessoal">
           <h3>Informações Pessoais</h3>
 
           <div>
@@ -51,43 +51,43 @@
           </div>
         </section>
 
-        <section id="history">
+        <section class="form-section">
           <h3>Vivências Relacionadas a Fraudes</h3>
 
-          <div>
+          <div class="experiencia-select">
             <label for="experiencia-pessoal"
               >Você já sofreu algum golpe antes? <span>*</span>
             </label>
             <select id="experiencia-pessoal" required>
               <option value="" disabled selected>Escolha uma opção</option>
-              <option value="Sim">Sim</option>
-              <option value="Não">Não</option>
+              <option value="1">Sim</option>
+              <option value="0">Não</option>
             </select>
           </div>
 
-          <div id="opcional" class="texto">
-            <label for="descricao"> O que aconteceu? <span>*</span> </label>
-            <textarea name="descricao" id="descricao"></textarea>
+          <div class="texto">
+            <label> O que aconteceu? <span>*</span> </label>
+            <textarea></textarea>
           </div>
 
-          <div>
+          <div class="experiencia-select">
             <label for="experiencia-familiar"
               >Você conhece alguém que já sofreu algum golpe? <span>*</span>
             </label>
             <select id="experiencia-familiar" required>
               <option value="" disabled selected>Escolha uma opção</option>
-              <option value="Sim">Sim</option>
-              <option value="Não">Não</option>
+              <option value="1">Sim</option>
+              <option value="0">Não</option>
             </select>
           </div>
 
-          <div id="opcional2" class="texto">
-            <label for="descricao2"> O que aconteceu? <span>*</span> </label>
-            <textarea name="descricao" id="descricao2"></textarea>
+          <div class="texto">
+            <label> O que aconteceu? <span>*</span> </label>
+            <textarea></textarea>
           </div>
         </section>
 
-        <section id="research">
+        <section class="form-section">
           <h3>Pesquisa Exploratória</h3>
 
           <div>
