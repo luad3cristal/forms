@@ -4,14 +4,18 @@ const textAreas = document.querySelectorAll(".texto textarea");
 const submitButton = document.querySelector("form");
 const darkModeButton = document.querySelector(".dark-mode-button");
 const darkItems = document.querySelectorAll(
-  ".change-dark, input, select, textarea"
+  ".change-dark, input, select, textarea, #botao"
 );
 
-darkModeButton.addEventListener("click", () => {
+const changeColorMode = () => {
   darkItems.forEach((e) => {
     e.classList.toggle("dark");
   });
-});
+};
+
+window.matchMedia("(prefers-color-scheme: dark)").matches && changeColorMode();
+
+darkModeButton.addEventListener("click", changeColorMode);
 
 if (localStorage.getItem("hasSubmited")) {
   document.querySelector(".overlay").style.display = "flex";
