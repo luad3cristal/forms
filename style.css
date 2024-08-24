@@ -5,103 +5,81 @@
 }
 
 body {
-  background-color: #ded7fe;
+  background-color: #d8d7fe;
   font-family: "Noto Sans";
+  box-shadow: 0 0 12px -4px black;
 }
 
 main {
   max-width: 720px;
-  height: 100%;
   margin: 0 auto;
   padding-block: 2rem;
   display: grid;
-  grid-template-columns: 1fr 6fr 1fr;
+  grid-template-columns: 1fr 8fr 1fr;
 
   background-color: #fff;
 }
 
 form {
   grid-column: 2 / 3;
+  display: grid;
+  gap: 1.5rem;
 }
 
-/* mostra as perguntas obrigatórias */
+input,
+select,
+textarea {
+  width: 100%;
+  height: 2rem;
+  padding: 0 12px;
+  margin-top: 0.5rem;
+  font-family: "Noto Sans";
+}
+
+textarea {
+  height: 60px;
+  max-height: 120px;
+  max-width: 600px;
+  padding: 5px 10px;
+}
+
 div label span {
   color: red;
 }
 
-#personal-data,
-#history,
-#research {
+.form-section {
+  display: grid;
+  gap: 1rem;
   width: 100%;
-  margin: 0 auto 20px;
   border-bottom: 1px solid #0000004f;
+  padding-bottom: 2rem;
 }
 
-#personal-data h3,
-#history h3,
-#research h3 {
-  text-align: center;
-  margin-bottom: 20px;
+.section-pessoal .nome-data {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
 }
 
-#personal-data div,
-#history div,
-#research div {
-  margin-bottom: 20px;
-
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-#personal-data div input {
-  width: 100%;
-  padding: 5px 10px;
-  font-family: "Noto Sans";
-}
-
-#history div select,
-#research div select {
-  width: 100%;
-  padding: 5px 10px;
-  font-family: "Noto Sans";
-}
-
-#history div option,
-#research div option {
-  font-family: "Noto Sans";
-}
-
-#history div textarea {
-  height: 60px;
-  padding: 5px 10px;
-}
-
-#history .texto {
+.texto {
   display: none;
+  flex-direction: column;
 }
 
-#research div {
-  gap: 8px;
-}
-
-#research div label {
-  text-align: justify;
-  font-size: 16px;
-}
-
-#botao {
-  display: flex;
-  justify-content: center;
+.form-section h3 {
+  text-align: center;
 }
 
 #botao button {
   font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
   color: white;
 
   background-color: #7a5cfa;
-
-  padding: 8px 16px;
+  cursor: pointer;
+  padding: 1rem 0;
+  width: 100%;
   border-radius: 8px;
   border: none;
 }
