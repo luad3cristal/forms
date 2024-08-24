@@ -7,6 +7,11 @@ const darkItems = document.querySelectorAll(
   ".change-dark, input, select, textarea, #botao, label"
 );
 
+if (localStorage.getItem("hasSubmited")) {
+  document.querySelector(".overlay").style.display = "flex";
+  document.querySelector("main").classList.add("submited");
+}
+
 const changeColorMode = () => {
   darkItems.forEach((e) => {
     e.classList.toggle("dark");
@@ -14,13 +19,7 @@ const changeColorMode = () => {
 };
 
 window.matchMedia("(prefers-color-scheme: dark)").matches && changeColorMode();
-
 darkModeButton.addEventListener("click", changeColorMode);
-
-if (localStorage.getItem("hasSubmited")) {
-  document.querySelector(".overlay").style.display = "flex";
-  document.querySelector("main").classList.add("submited");
-}
 
 selects.forEach((select, index) => {
   select.addEventListener("input", () => {
@@ -67,6 +66,7 @@ submitButton.addEventListener("submit", (e) => {
       informacao.modeloCelular = "Não é um celular";
     }
   });
+  location.reload();
 });
 
 const postarDados = () => {
