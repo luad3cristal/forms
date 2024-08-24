@@ -7,7 +7,24 @@
 body {
   background-color: #d8d7fe;
   font-family: "Noto Sans";
-  box-shadow: 0 0 12px -4px black;
+}
+body.dark {
+  background-color: #260027;
+}
+
+main.submited {
+  display: none;
+}
+
+.overlay {
+  display: none;
+  position: absolute;
+  inset: 0;
+  background-color: #ebc8c8;
+  align-items: center;
+  justify-content: center;
+  padding: 20%;
+  text-align: center;
 }
 
 main {
@@ -16,8 +33,13 @@ main {
   padding-block: 2rem;
   display: grid;
   grid-template-columns: 1fr 8fr 1fr;
-
+  position: relative;
+  box-shadow: 0 0 12px -4px black;
   background-color: #fff;
+}
+main.dark {
+  background-color: rgb(14, 13, 29);
+  color: #eaf8fa;
 }
 
 form {
@@ -30,10 +52,17 @@ input,
 select,
 textarea {
   width: 100%;
-  height: 2rem;
+  height: 2.5rem;
   padding: 0 12px;
   margin-top: 0.5rem;
   font-family: "Noto Sans";
+}
+input.dark,
+select.dark,
+textarea.dark {
+  background-color: #030011;
+  color: #b3c1c2;
+  border: 1px solid black;
 }
 
 textarea {
@@ -82,4 +111,20 @@ div label span {
   width: 100%;
   border-radius: 8px;
   border: none;
+}
+
+.dark-mode-button {
+  position: absolute;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  top: 1rem;
+  right: 1rem;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}
+
+.dark-mode-button img {
+  width: 100%;
 }

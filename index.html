@@ -10,17 +10,16 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-
     <link rel="stylesheet" href="style.css" />
-    <!-- 
-    adicionar favicon
-    <link rel="shortcut icon" href="" type="image/x-icon"> 
-    -->
+    <link rel="shortcut icon" href="./assets/form.svg" type="image/x-icon" />
 
     <title>Formulário - Trabalho de Português</title>
   </head>
-  <body>
-    <main>
+  <body class="change-dark">
+    <main class="change-dark">
+      <figure class="dark-mode-button" title="dark mode">
+        <img src="./assets/dark-mode.svg" alt="" />
+      </figure>
       <form>
         <section class="form-section section-pessoal">
           <h3>Informações Pessoais</h3>
@@ -136,6 +135,9 @@
         </div>
       </form>
     </main>
+    <div class="overlay">
+      <h1>Obrigado &#x2764;&#xfe0f;</h1>
+    </div>
 
     <script src="script.js"></script>
   </body>

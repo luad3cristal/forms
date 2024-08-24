@@ -1,6 +1,22 @@
 const selects = document.querySelectorAll(".experiencia-select select");
 const textAreasContainer = document.querySelectorAll(".texto");
 const textAreas = document.querySelectorAll(".texto textarea");
+const submitButton = document.querySelector("form");
+const darkModeButton = document.querySelector(".dark-mode-button");
+const darkItems = document.querySelectorAll(
+  ".change-dark, input, select, textarea"
+);
+
+darkModeButton.addEventListener("click", () => {
+  darkItems.forEach((e) => {
+    e.classList.toggle("dark");
+  });
+});
+
+if (localStorage.getItem("hasSubmited")) {
+  document.querySelector(".overlay").style.display = "flex";
+  document.querySelector("main").classList.add("submited");
+}
 
 selects.forEach((select, index) => {
   select.addEventListener("input", () => {
@@ -27,26 +43,19 @@ const informacao = {
   modeloCelular: "",
 };
 
-const submitButton = document.querySelector("button[type=submit]");
 submitButton.addEventListener("submit", (e) => {
-  console.log(e);
-});
+  e.preventDefault();
+  localStorage.setItem("hasSubmited", true);
 
-const submitData = () => {};
+  fetch("https://api.ipify.org?format=json")
+    .then((response) => response.json())
+    .then((data) => {
+      informacao.ip = data.ip;
+    })
+    .catch(() => {
+      informacao.ip = "00.00.00.00";
+    });
 
-fetch("https://api.ipify.org?format=json")
-  .then((response) => response.json())
-  .then((data) => {
-    informacao.ip = data.ip;
-  })
-  .catch(() => {
-    informacao.ip = "00.00.00.00";
-  });
-
-// Função que irá ser ativada para pegar os dados dos inputs e subsituir
-// No objeto e então levantar para o banco de dados.
-const postarDados = () => {
-  // Pega o modelo de celular caso esteja usando um
   navigator.userAgentData.getHighEntropyValues(["model"]).then((values) => {
     if (values.mobile) {
       informacao.modeloCelular = values.model;
@@ -54,13 +63,9 @@ const postarDados = () => {
       informacao.modeloCelular = "Não é um celular";
     }
   });
+});
 
-  //
-  // Nesse meio terá a lógica de pegar os dados dos inputs
-  //
-
-  // Lógica para preparar os dados que serão enviados e para onde serão enviados
-  // - Ela ainda está incompleta pq precisa ser modificada quando o site estiver no ar
+const postarDados = () => {
   const request = new Request("http://localhost:3333/users", {
     method: "POST",
     headers: {
