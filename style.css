@@ -9,7 +9,7 @@ body {
   font-family: "Noto Sans";
 }
 body.dark {
-  background-color: #2b172c;
+  background-color: #150c0c;
 }
 
 main.submited {
@@ -38,8 +38,8 @@ main {
   background-color: #fff;
 }
 main.dark {
-  background-color: rgb(14, 13, 29);
-  color: #eaf8fa;
+  background-color: #1c1212;
+  color: #f6efef;
 }
 
 form {
@@ -60,8 +60,8 @@ textarea {
 input.dark,
 select.dark,
 textarea.dark {
-  background-color: #030011;
-  color: #b3c1c2;
+  background-color: #150c0c;
+  color: #d6cfcf;
   border: 1px solid black;
 }
 
@@ -70,6 +70,10 @@ textarea {
   max-height: 120px;
   max-width: 600px;
   padding: 5px 10px;
+}
+
+label {
+  font-weight: 500;
 }
 
 div label span {
@@ -111,6 +115,11 @@ div label span {
   width: 100%;
   border-radius: 8px;
   border: none;
+}
+
+#botao.dark button {
+  color: #1c1212;
+  background-color: #cda9a8;
 }
 
 .dark-mode-button {
