@@ -1,24 +1,13 @@
-const select = document.getElementById("experiencia-pessoal");
-const select2 = document.getElementById("experiencia-familiar");
+const selects = document.querySelectorAll(".experiencia-select select");
+const textAreasContainer = document.querySelectorAll(".texto");
+const textAreas = document.querySelectorAll(".texto textarea");
+console.log(textAreas);
 
-select.addEventListener("input", () => {
-  let valor = select.options[select.selectedIndex].text;
-
-  if (valor == "Sim") {
-    document.getElementById("opcional").style.display = "flex";
-  } else {
-    document.getElementById("opcional").style.display = "none";
-  }
-});
-
-select2.addEventListener("click", () => {
-  let valor = select2.options[select2.selectedIndex].text;
-
-  if (valor == "Sim") {
-    document.getElementById("opcional2").style.display = "flex";
-  } else {
-    document.getElementById("opcional2").style.display = "none";
-  }
+selects.forEach((select, index) => {
+  select.addEventListener("input", () => {
+    textAreasContainer[index].style.display = +select.value ? "flex" : "none";
+    textAreas[index].setAttribute(+select.value ? "required" : "", "");
+  });
 });
 
 // Objeto com todas as informações que serão pegas
