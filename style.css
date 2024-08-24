@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #d8d7fe;
+  background-color: #f4ecec;
   font-family: "Noto Sans";
 }
 body.dark {
@@ -35,7 +35,8 @@ main {
   grid-template-columns: 1fr 8fr 1fr;
   position: relative;
   box-shadow: 0 0 12px -4px black;
-  background-color: #fff;
+  background-color: #ece3e3;
+  color: #100909;
 }
 main.dark {
   background-color: #1c1212;
@@ -53,9 +54,13 @@ select,
 textarea {
   width: 100%;
   height: 2.5rem;
+  font-size: 1rem;
   padding: 0 12px;
   margin-top: 0.5rem;
   font-family: "Noto Sans";
+  background-color: #e2dcda;
+  border: 1px solid #e2dcda;
+  border-bottom: 1px solid #c5bebe;
 }
 input.dark,
 select.dark,
@@ -73,7 +78,12 @@ textarea {
 }
 
 label {
+  color: #100909;
+  font-size: 1.25;
   font-weight: 500;
+}
+label.dark {
+  color: #c5bebe;
 }
 
 div label span {
@@ -100,16 +110,17 @@ div label span {
 }
 
 .form-section h3 {
+  font-size: 1.25rem;
   text-align: center;
 }
 
 #botao button {
   font-size: 14px;
   font-weight: 600;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   color: white;
-
-  background-color: #7a5cfa;
+  background-color: #573332;
+  text-transform: uppercase;
   cursor: pointer;
   padding: 1rem 0;
   width: 100%;

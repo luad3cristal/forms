@@ -4,7 +4,7 @@ const textAreas = document.querySelectorAll(".texto textarea");
 const submitButton = document.querySelector("form");
 const darkModeButton = document.querySelector(".dark-mode-button");
 const darkItems = document.querySelectorAll(
-  ".change-dark, input, select, textarea, #botao"
+  ".change-dark, input, select, textarea, #botao, label"
 );
 
 const changeColorMode = () => {
