@@ -1,12 +1,14 @@
 const selects = document.querySelectorAll(".experiencia-select select");
 const textAreasContainer = document.querySelectorAll(".texto");
 const textAreas = document.querySelectorAll(".texto textarea");
-console.log(textAreas);
 
 selects.forEach((select, index) => {
   select.addEventListener("input", () => {
     textAreasContainer[index].style.display = +select.value ? "flex" : "none";
-    textAreas[index].setAttribute(+select.value ? "required" : "", "");
+    +select.value
+      ? textAreas[index].setAttribute("required", "")
+      : textAreas[index].removeAttribute("required");
+    console.log(textAreas);
   });
 });
 
@@ -25,7 +27,13 @@ const informacao = {
   modeloCelular: "",
 };
 
-// Pegar o ip da pessoa acessando o site e colocando no array de informação
+const submitButton = document.querySelector("button[type=submit]");
+submitButton.addEventListener("submit", (e) => {
+  console.log(e);
+});
+
+const submitData = () => {};
+
 fetch("https://api.ipify.org?format=json")
   .then((response) => response.json())
   .then((data) => {
