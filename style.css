@@ -155,3 +155,31 @@ div label span {
 .dark-mode-button img {
   width: 100%;
 }
+
+.loading-page {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #ece3e3;
+  transition: display 0.5s ease;
+}
+.loading-page.dark {
+  background-color: #1c1212;
+}
+
+.loader {
+  width: 100px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 8px solid;
+  border-color: #860637 #0000;
+  animation: l1 0.5s infinite;
+}
+@keyframes l1 {
+  to {
+    transform: rotate(0.5turn);
+  }
+}
