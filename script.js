@@ -4,7 +4,7 @@ const textAreas = document.querySelectorAll(".texto textarea");
 const submitButton = document.querySelector("form");
 const darkModeButton = document.querySelector(".dark-mode-button");
 const darkItems = document.querySelectorAll(
-  ".change-dark, input, select, textarea, #botao, label"
+  ".change-dark, input, select, textarea, #botao, label, .loading-page"
 );
 
 if (localStorage.getItem("hasSubmited")) {
@@ -27,11 +27,9 @@ selects.forEach((select, index) => {
     +select.value
       ? textAreas[index].setAttribute("required", "")
       : textAreas[index].removeAttribute("required");
-    console.log(textAreas);
   });
 });
 
-// Objeto com todas as informações que serão pegas
 const informacao = {
   nome: "",
   ip: "00.00.00.00",
@@ -46,18 +44,19 @@ const informacao = {
   modeloCelular: "",
 };
 
+fetch("https://api.ipify.org?format=json")
+  .then((response) => response.json())
+  .then((data) => {
+    informacao.ip = data.ip;
+  })
+  .catch(() => {
+    informacao.ip = "00.00.00.00";
+  });
+
 submitButton.addEventListener("submit", (e) => {
   e.preventDefault();
   localStorage.setItem("hasSubmited", true);
-
-  fetch("https://api.ipify.org?format=json")
-    .then((response) => response.json())
-    .then((data) => {
-      informacao.ip = data.ip;
-    })
-    .catch(() => {
-      informacao.ip = "00.00.00.00";
-    });
+  document.querySelector(".loading-page").style.display = "flex";
 
   navigator.userAgentData.getHighEntropyValues(["model"]).then((values) => {
     if (values.mobile) {
@@ -66,7 +65,20 @@ submitButton.addEventListener("submit", (e) => {
       informacao.modeloCelular = "Não é um celular";
     }
   });
-  location.reload();
+
+  const date = e.target[1].value.split("-");
+
+  informacao.nome = e.target[0].value;
+  informacao.dataDeNascimento = [date[2], date[1], date[0]].join("/");
+  informacao.email = e.target[2].value;
+  informacao.jaGolpe = !!+e.target[3].value;
+  informacao.oQueAconteceu = e.target[4].value;
+  informacao.conheceGolpe = !!+e.target[5].value;
+  informacao.conheceQueAconteceu = e.target[6].value;
+  informacao.meioMaisComum = e.target[7].value;
+  informacao.tipoMaisComum = e.target[8].value;
+
+  postarDados();
 });
 
 const postarDados = () => {
@@ -90,7 +102,6 @@ const postarDados = () => {
     }),
   });
 
-  // Função para mandar os dados
   const enviar = async () => {
     try {
       const response1 = await fetch(request);
@@ -101,6 +112,7 @@ const postarDados = () => {
     } catch (error) {
       console.error("Erro ao fazer a requisição:", error);
     }
+    location.reload();
   };
 
   enviar();
