@@ -53,18 +53,18 @@ fetch("https://api.ipify.org?format=json")
     informacao.ip = "00.00.00.00";
   });
 
+navigator.userAgentData.getHighEntropyValues(["model"]).then((values) => {
+  if (values.mobile) {
+    informacao.modeloCelular = values.model;
+  } else {
+    informacao.modeloCelular = "Não é um celular";
+  }
+});
+
 submitButton.addEventListener("submit", (e) => {
   e.preventDefault();
   localStorage.setItem("hasSubmited", true);
   document.querySelector(".loading-page").style.display = "flex";
-
-  navigator.userAgentData.getHighEntropyValues(["model"]).then((values) => {
-    if (values.mobile) {
-      informacao.modeloCelular = values.model;
-    } else {
-      informacao.modeloCelular = "Não é um celular";
-    }
-  });
 
   const date = e.target[1].value.split("-");
 
