@@ -62,13 +62,13 @@ textarea {
   border: 1px solid #e2dcda;
   border-bottom: 1px solid #c5bebe;
 }
-
 input.dark,
 select.dark,
 textarea.dark {
   background-color: #150c0c;
   color: #d6cfcf;
   border: 1px solid black;
+  color-scheme: dark;
 }
 
 input:focus,
