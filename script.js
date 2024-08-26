@@ -82,25 +82,28 @@ submitButton.addEventListener("submit", (e) => {
 });
 
 const postarDados = () => {
-  const request = new Request("http://localhost:3333/users", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      nome: informacao.nome,
-      ip: informacao.ip,
-      dataDeNascimento: informacao.dataDeNascimento,
-      email: informacao.email,
-      jaGolpe: informacao.jaGolpe,
-      oQueAconteceu: informacao.oQueAconteceu,
-      conheceGolpe: informacao.conheceGolpe,
-      conheceQueAconteceu: informacao.conheceQueAconteceu,
-      meioMaisComum: informacao.meioMaisComum,
-      tipoMaisComum: informacao.tipoMaisComum,
-      modeloCelular: informacao.modeloCelular,
-    }),
-  });
+  const request = new Request(
+    "https://servidor-trabalho-portugues.vercel.app/users",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        nome: informacao.nome,
+        ip: informacao.ip,
+        dataDeNascimento: informacao.dataDeNascimento,
+        email: informacao.email,
+        jaGolpe: informacao.jaGolpe,
+        oQueAconteceu: informacao.oQueAconteceu,
+        conheceGolpe: informacao.conheceGolpe,
+        conheceQueAconteceu: informacao.conheceQueAconteceu,
+        meioMaisComum: informacao.meioMaisComum,
+        tipoMaisComum: informacao.tipoMaisComum,
+        modeloCelular: informacao.modeloCelular,
+      }),
+    }
+  );
 
   const enviar = async () => {
     try {
